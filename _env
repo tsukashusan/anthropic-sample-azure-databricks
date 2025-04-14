@@ -1,6 +1,11 @@
 DATABRICKS_HOST=<DATABRICKS_HOST>
 DATABRICKS_TOKEN=<DATABRICKS_TOKEN>
-END_POINT=databricks-claude-3-7-sonnet
+DATABRICKS_MODEL_NAME=<DATABRICKS_MODEL_NAME>
+OPTION_END_POINT_PARAM=/serving-endpoints
 IMAGE_SAMPLE_URL=<IMAGE_SAMPLE_URL>
 FILE_SUFFIX=png
-PROMPT=<この心電図波形は不整脈の波形です。\n以下の選択肢の何れかを選択し、その理由を述べなさい\n(1) 右脚ブロック\n(2) 左脚ブロック\n(3) 前壁中隔心筋梗塞\n(4) 心拍頻拍\n(5) 心房細動>
+AZURE_OPENAI_ENDPOINT=<AZURE_OPENAI_ENDPOINT>
+OPENAI_TOKEN=<OPENAI_TOKEN>
+OPENAI_MODEL_NAME=gpt-4.5-preview
+OPENAI_API_VERSION=2025-01-01-preview
+PROMPT=この心電図波形は不整脈の波形です。\n以下の選択肢の何れかを選択し、その理由を述べなさい\t\n(1) 右脚ブロック\t\n(2) 左脚ブロック\t\n(3) 前壁中隔心筋梗塞\t\n(4) 心拍頻拍\t\n(5) 心房細動

@@ -1,0 +1,4 @@
+mlflow
+ipykernel
+python-dotenv
+openai

@@ -1,0 +1,54 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Azure OpenAI Sample Source",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:debian",
+	"runArgs": ["--platform=linux/amd64"],
+	"features": {
+		//"ghcr.io/devcontainers/features/azure-cli:1": {},
+		//"ghcr.io/azure/azure-dev/azd:0": {},
+        //"ghcr.io/devcontainers/features/python:1": {
+        //    "version": "3.13",
+        //    "toolsToInstall": [
+        //        "pip"
+        //    ]
+        //}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+                "ms-python.vscode-pylance",
+                "streetsidesoftware.code-spell-checker",
+                "charliermarsh.ruff",
+                "tamasfe.even-better-toml",
+                "ms-azuretools.vscode-docker",
+				"ms-toolsai.jupyter"
+			],
+			"settings": {
+				"dev.containers.dokerCredentialHelper": false
+			}
+		}
+	},
+	"remoteEnv": {
+		"PODMAN_USERNS": "keep-id"
+	},
+	"remoteUser": "vscode",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	//"onCreateCommand": "sudo sh -c \"echo 'nameserver 8.8.8.8' >> /etc/resolv.conf\"",
+	"onCreateCommand": "sudo sh -c \"apt update -y;apt -qq upgrade -y;apt -qq install -y python3 python3-pip python3-venv\"",
+	"postCreateCommand": "python3 -m venv .venv;./.venv/bin/python3 -m pip install --upgrade pip;./.venv/bin/python3 -m pip install -r ./requirements.txt",
+	"postStartCommand": ". ./.venv/bin/activate"
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

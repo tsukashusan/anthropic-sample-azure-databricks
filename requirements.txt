@@ -1,4 +1,4 @@
-mlflow
 ipykernel
 python-dotenv
 openai
+azure.identity

@@ -9,3 +9,4 @@ OPENAI_TOKEN=<OPENAI_TOKEN>
 OPENAI_MODEL_NAME=gpt-4.5-preview
 OPENAI_API_VERSION=2025-01-01-preview
 PROMPT=この心電図波形は不整脈の波形です。\n以下の選択肢の何れかを選択し、その理由を述べなさい\t\n(1) 右脚ブロック\t\n(2) 左脚ブロック\t\n(3) 前壁中隔心筋梗塞\t\n(4) 心拍頻拍\t\n(5) 心房細動
+SYSTEM_PROMPT=You are a helpful assistant that helps people find information.Please ensure the output is always in Markdown format.

@@ -28,9 +28,6 @@
 			}
 		}
 	},
-	"remoteEnv": {
-		"PODMAN_USERNS": "keep-id"
-	},
 	"remoteUser": "vscode",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -39,16 +36,10 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	//"onCreateCommand": "sudo sh -c \"echo 'nameserver 8.8.8.8' >> /etc/resolv.conf\"",
-	//"onCreateCommand": "sudo sh -c \"apt update -y;apt -qq upgrade -y;apt -qq install -y python3 python3-pip python3-venv\"",
-	//"onCreateCommand": "sudo sh -c \"echo 'nameserver 8.8.8.8' >> /etc/resolv.conf;apt update -y;apt -qq upgrade -y;curl -kL https://bootstrap.pypa.io/get-pip.py |/usr/local/python/current/bin/python3\"",
 	"onCreateCommand": "sudo sh -c \"echo 'nameserver 8.8.8.8' >> /etc/resolv.conf;apt update -y;apt -qq upgrade -y\"",
 	//"postCreateCommand": "python3 -m venv .venv;./.venv/bin/python3 -m pip install --upgrade pip;./.venv/bin/python3 -m pip install -r ./requirements.txt",
 	"postCreateCommand": "python -m venv .venv",
 	"postStartCommand": ". ./.venv/bin/activate;python -m ensurepip --upgrade;pip install debugpy;pip install -r requirements.txt;pip install -r requirements_mlflow.txt"
 	// Configure tool-specific properties.
 	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
